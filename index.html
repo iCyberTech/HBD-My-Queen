@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff3b3b;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #animation {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="background-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>Happy Birthday, My Love! 🎉</h1>
+    <p>You make every day special, and today is all about celebrating YOU! 💖</p>
+    <button id="surpriseButton">Click for a Surprise!</button>
+    <div id="animation" class="hidden">
+      <p>🎂🎁🎈 You are the best thing that ever happened to me! 🎈🎁🎂</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript Code
+    document.getElementById('surpriseButton').addEventListener('click', function () {
+      const animationDiv = document.getElementById('animation');
+      animationDiv.classList.remove('hidden');
+      this.textContent = "Memories";
+      this.onclick = function () {
+        window.location.href = "memories.html";
+      };
+    });
+  </script>
+</body>
+</html>
