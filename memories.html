@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memories</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 20px 0;
+    }
+
+    /* Carousel Styles */
+    .carousel {
+      position: relative;
+      width: 80%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Video Grid Styles */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .video-grid video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Beautiful Memories 💖</h1>
+
+  <!-- Auto-Sliding Image Carousel -->
+  <div class="carousel" id="carousel">
+    <img src="images/image1.JPG" alt="Memory 1" class="active">
+    <img src="images/image2.JPG" alt="Memory 2">
+    <img src="images/image3.JPG" alt="Memory 3">
+    <img src="images/image4.JPG" alt="Memory 4">
+    <img src="images/image5.JPG" alt="Memory 5">
+  </div>
+
+  <!-- Video Grid -->
+  <div class="video-grid">
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video5.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video6.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video7.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video8.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video9.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="video10.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    // JavaScript for Auto-Sliding Carousel
+    const carousel = document.getElementById('carousel');
+    const images = carousel.getElementsByTagName('img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      // Hide the current image
+      images[currentIndex].classList.remove('active');
+
+      // Move to the next image
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Show the next image
+      images[currentIndex].classList.add('active');
+    }
+
+    // Automatically change images every 3 seconds
+    setInterval(showNextImage, 3000);
+  </script>
+</body>
+</html>
